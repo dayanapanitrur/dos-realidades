@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+
+body {
+  background-color: #cdebfd;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.95) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.85) 0%, transparent 55%),
+    radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.7) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 15px 15px, 15px 15px;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+
+.webcore-container {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(236, 233, 216, 0.95);
+  border: 2px solid #0055ea;
+  box-shadow: 0 10px 40px rgba(0, 20, 30, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+.webcore-titlebar {
+  background: linear-gradient(180deg, #3d8aff 0%, #0042d9 50%, #002db3 100%);
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+
+.title-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.window-controls-top {
+  display: flex;
+  gap: 4px;
+}
+
+
+.win-btn-top {
+  background: linear-gradient(180deg, #ffffff 0%, #e1dfc7 100%);
+  border: 1px solid #ffffff;
+  border-bottom: 2px solid #404040;
+  border-right: 2px solid #404040;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.win-btn-top.close-btn {
+  background: linear-gradient(180deg, #ff5c5c 0%, #cc0000 100%);
+  color: white;
+}
+
+
+.webcore-menubar {
+  background: #f1efeb;
+  padding: 5px 12px;
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  border-bottom: 1px solid #aca899;
+  color: #000;
+}
+
+
+.webcore-menubar span {
+  cursor: pointer;
+}
+
+
+.webcore-menubar .menu-inactivo {
+  color: #a0a0a0 !important;
+  cursor: default !important;
+  opacity: 0.6;
+}
+
+
+.webcore-menubar .menu-activo {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+
+.menu-right {
+  margin-left: auto;
+  font-weight: bold;
+  color: #0055ea;
+}
+
+
+.webcore-body {
+  padding: 20px;
+  background: rgba(240, 245, 255, 0.8);
+}
+
+
+.top-controls-panel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px 15px;
+  border: 1px solid rgba(0, 85, 234, 0.3);
+  border-radius: 8px;
+}
+
+
+.glossy-blue-btn {
+  background: linear-gradient(180deg, #70c4ff 0%, #0076ff 50%, #0044cc 100%);
+  color: white;
+  border: 1px solid #002288;
+  padding: 8px 28px;
+  font-weight: 800;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.status-badge {
+  font-size: 12px;
+  font-weight: bold;
+  color: #0044cc;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 14px;
+  border: 1px solid #70c4ff;
+  border-radius: 6px;
+}
+
+
+.boceto-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  gap: 25px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+
+.col-sistema {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 320px;
+}
+
+
+.pos-baja { margin-top: 40px; }
+.pos-media { margin-top: 0px; }
+.pos-alta { margin-top: -30px; }
+
+
+.y2k-window {
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  box-shadow: 4px 4px 12px rgba(0, 50, 100, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+.window-bar {
+  background: linear-gradient(90deg, #2b70e6, #539eff);
+  color: white;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.win-icons span {
+  margin-left: 5px;
+  padding: 0 5px;
+  background: rgba(0,0,0,0.15);
+  border-radius: 2px;
+}
+
+
+.window-display {
+  background: #050811;
+  width: 320px;
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#contenedor-threejs {
+  width: 320px !important;
+  height: 240px !important;
+  display: block;
+}
+
+
+#contenedor-threejs canvas {
+  width: 320px !important;
+  height: 240px !important;
+  display: block;
+}
+
+
+.system-text {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #b5c7d8;
+  padding: 12px;
+  font-size: 12px;
+  color: #222;
+  border-radius: 4px;
+}
+
+
+.system-text h3 {
+  font-size: 13px;
+  color: #0044cc;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+.text-top { margin-bottom: 10px; }
+
+
+.tag {
+  display: inline-block;
+  margin-top: 8px;
+  background: #e2f0ff;
+  color: #0055ea;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #b5c7d8;
+  border-radius: 3px;
+}
+
+
+.webcore-statusbar {
+  background: #ece9d8;
+  border-top: 1px solid #aca899;
+  padding: 6px 12px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  color: #404040;
+  margin-top: 20px;
+}
+
+
+/* Tooltips flotantes cuando pasas el cursor por las cajas de texto */
+.titulo-ayuda {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+
+.titulo-ayuda:hover {
+  background: rgba(220, 235, 255, 0.95);
+}
+
+
+.tooltip-gesto {
+  position: fixed;
+  background: #ece9d8;
+  border: 2px solid #0054e3;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  z-index: 99999;
+  border-radius: 4px;
+  display: none;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  max-width: 240px;
+  pointer-events: none;
+}
+
+
+.tooltip-gesto img {
+  width: 220px;
+  height: auto;
+  border: 1px solid #aca899;
+  background: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.tooltip-gesto span {
+  font-size: 11px;
+  font-weight: bold;
+  color: #0044cc;
+}
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multirealidades.sys</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script async src="https://docs.opencv.org/4.5.4/opencv.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="webcore-container">
+   
+    <div class="webcore-titlebar">
+      <div class="title-left">
+        <span class="app-icon">🌐</span>
+        <span class="app-title">Multirealidades.sys</span>
+      </div>
+      <div class="window-controls-top">
+        <button class="win-btn-top">_</button>
+        <button class="win-btn-top">□</button>
+        <button class="win-btn-top close-btn">×</button>
+      </div>
+    </div>
+
+    <div class="webcore-menubar">
+      <span id="menu-tecnologias" class="menu-activo" style="cursor:pointer;">Programas</span>
+      <span id="menu-reflexion" class="menu-activo" style="cursor:pointer;">Reflexión</span>
+      <span id="menu-creditos" class="menu-activo" style="cursor:pointer;">Créditos</span>
+      <span class="menu-inactivo">Sistemas</span>
+      <span class="menu-inactivo">Herramientas</span>
+      <div class="menu-right">
+        <span>[ 2006.SYS ]</span>
+      </div>
+    </div>
+
+    <div class="webcore-body">
+
+      <div class="top-controls-panel">
+        <button id="btn-camara" class="glossy-blue-btn">
+          <span>start</span>
+        </button>
+        <span id="texto-camara" class="status-badge">STATUS: CÁMARA INACTIVA</span>
+      </div>
+
+      <video id="webcam" style="display: none;"></video>
+     
+      <main class="boceto-layout">
+
+        <div class="col-sistema pos-baja">
+          <div class="y2k-window">
+            <div class="window-bar">
+              <span class="title">1_OpenCV_Entorno.sys</span>
+              <div class="win-icons"><span>_</span><span>□</span><span>×</span></div>
+            </div>
+            <div class="window-display">
+              <canvas id="canvas-opencv"></canvas>
+            </div>
+          </div>
+          <div class="system-text">
+            <h3>SISTEMA 1:</h3>
+            <p>Este sistema detecta la ausencia de movimiento en el entorno. Quédate completamente inmóvil frente a la cámara para que la imagen se distorsione progresivamente. Al moverte la visión vuelve a la normalidad al instante.</p>
+            <span id="status-alucinacion" class="tag">Distorsión: 0%</span>
+          </div>
+        </div>
+
+        <div class="col-sistema pos-media">
+          <div id="caja-sistema2" class="system-text text-top titulo-ayuda">
+            <h3>SISTEMA 2:</h3>
+            <p>Este sistema mide la separación cruzada entre ambas manos. Junta el dedo índice de una mano con el pulgar de la otra y viceversa. Al alejar o acercar las manos manteniendo esta postura controlarás la opacidad de la malla sobre tu cuerpo.</p>
+          </div>
+          <div class="y2k-window alt-window">
+            <div class="window-bar">
+              <span class="title">2_MediaPipe_Cuerpo.sys</span>
+              <div class="win-icons"><span>_</span><span>□</span><span>×</span></div>
+            </div>
+            <div class="window-display">
+              <canvas id="canvas-mediapipe"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sistema pos-alta">
+          <div class="y2k-window">
+            <div class="window-bar">
+              <span class="title">3_ThreeJS_Blender.sys</span>
+              <div class="win-icons"><span>_</span><span>□</span><span>×</span></div>
+            </div>
+            <div class="window-display" id="contenedor-threejs"></div>
+          </div>
+          <div id="caja-sistema3" class="system-text titulo-ayuda">
+            <h3>SISTEMA 3:</h3>
+            <p>Este sistema mide la distancia entre índice y pulgar para escalar la figura 3D. Cerrando los demás dedos en puño podrás desplazarla libremente por la ventana.</p>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+   
+    <div class="webcore-statusbar">
+      <span>Listo</span>
+      <span>Multirealidades v2.0</span>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
